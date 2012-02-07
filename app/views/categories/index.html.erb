@@ -1,0 +1,18 @@
+<h1>Categories</h1>
+
+<table>
+	<tr>
+<% link_str = "" %>
+<% while @category.category != @category.category.category %>
+<%  link_str = link_to category.name, category + " -> " + link_str %>
+<% end %>
+		<th>Category <%= link_str %></th>
+	</tr>
+
+<% @categories.each do |category| %>
+	<tr>
+	<td><%= link_to category.name, category %></td>
+	</tr>
+<% end %>
+
+</table>
